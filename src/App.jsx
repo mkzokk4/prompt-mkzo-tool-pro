@@ -405,19 +405,19 @@ IMPORTANT RULES:
 
             {/* AI Voice Toggle Switch */}
             <div className="pt-2 border-t border-[#2a2e39] animate-fade-in">
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', overflow: 'hidden' }} className="bg-[#0d1014] border border-[#2a2e39] rounded-lg p-3 mt-2">
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', minWidth: 0, flex: '1 1 0%', overflow: 'hidden' }}>
-                  <div style={{ flexShrink: 0 }}>{includeVoice ? <Volume2 size={16} className="text-[#00ff00]" /> : <VolumeX size={16} className="text-gray-500" />}</div>
-                  <div style={{ minWidth: 0, overflow: 'hidden' }}>
-                    <p style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} className="text-gray-300 text-xs font-medium">မြန်မာလို စကားပြော ထည့်မည်</p>
-                    <p style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} className="text-gray-500 text-[10px] mt-0.5">Video အတွက် Voiceover Script ပါဝင်ရန်</p>
+              <div className="flex items-center justify-between bg-[#0d1014] border border-[#2a2e39] rounded-lg p-3 mt-2">
+                <div className="flex items-center gap-2">
+                  {includeVoice ? <Volume2 size={16} className="text-[#00ff00]" /> : <VolumeX size={16} className="text-gray-500" />}
+                  <div>
+                    <p className="text-gray-300 text-xs font-medium">မြန်မာလို စကားပြော ထည့်မည်</p>
+                    <p className="text-gray-500 text-[10px] mt-0.5">Video အတွက် Voiceover Script ပါဝင်ရန်</p>
                   </div>
                 </div>
                 <button
                   onClick={() => setIncludeVoice(!includeVoice)}
-                  style={{ flexShrink: 0, width: '44px', height: '24px', borderRadius: '9999px', position: 'relative', display: 'flex', alignItems: 'center', transition: 'background-color 0.3s', backgroundColor: includeVoice ? '#00ff00' : '#374151' }}
+                  className={`w-11 h-6 rounded-full relative transition-colors duration-300 flex items-center shadow-inner ${includeVoice ? 'bg-[#00ff00]' : 'bg-gray-700'}`}
                 >
-                  <div style={{ width: '16px', height: '16px', borderRadius: '9999px', backgroundColor: 'white', position: 'absolute', boxShadow: '0 1px 3px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease-in-out', transform: includeVoice ? 'translateX(24px)' : 'translateX(4px)' }} />
+                  <div className={`w-4 h-4 rounded-full bg-white absolute shadow-md transition-transform duration-300 ease-in-out ${includeVoice ? 'translate-x-6' : 'translate-x-1'}`} />
                 </button>
               </div>
             </div>
