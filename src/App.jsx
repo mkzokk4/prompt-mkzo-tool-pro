@@ -523,21 +523,21 @@ ${jsonStructure}`;
             {/* AI Voice Toggle Glass */}
             {activeTab === 'VIDEO' && (
               <div className="pt-5 border-t border-white/10 animate-fade-in">
-                <div className="flex items-center justify-between bg-black/30 border border-white/5 hover:border-white/20 rounded-xl p-4 transition-all">
-                  <div className="flex items-center gap-4">
-                    <div className={`${includeVoice ? 'text-[#00e5ff] animate-pulse-slow drop-shadow-[0_0_8px_rgba(0,229,255,0.5)]' : 'text-gray-600'} transition-all duration-500`}>
+                <div className="flex items-center justify-between bg-black/30 border border-white/5 hover:border-white/20 rounded-xl p-4 transition-all overflow-hidden">
+                  <div className="flex items-center gap-4 min-w-0 flex-1">
+                    <div className={`flex-shrink-0 ${includeVoice ? 'text-[#00e5ff] animate-pulse-slow drop-shadow-[0_0_8px_rgba(0,229,255,0.5)]' : 'text-gray-600'} transition-all duration-500`}>
                       {includeVoice ? <Volume2 size={22} className="animate-wiggle" /> : <VolumeX size={22} />}
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <p className={`text-sm font-bold transition-colors ${includeVoice ? 'text-white' : 'text-gray-400'}`}>မြန်မာလို စကားပြော ထည့်မည်</p>
                       <p className="text-[#00e5ff]/50 text-[10px] mt-0.5 tracking-wide">Video အတွက် Voiceover Script</p>
                     </div>
                   </div>
                   <button
                     onClick={() => setIncludeVoice(!includeVoice)}
-                    className={`w-14 h-7 rounded-full relative transition-all duration-500 flex items-center cursor-pointer border ${includeVoice ? 'bg-[#00e5ff]/20 border-[#00e5ff]/50 shadow-[0_0_15px_rgba(0,229,255,0.3)] animate-pulse-glow' : 'bg-black/50 border-white/10'}`}
+                    className={`w-14 h-7 flex-shrink-0 ml-3 rounded-full relative transition-all duration-500 flex items-center cursor-pointer border overflow-hidden ${includeVoice ? 'bg-[#00e5ff]/20 border-[#00e5ff]/50 shadow-[0_0_15px_rgba(0,229,255,0.3)] animate-pulse-glow' : 'bg-black/50 border-white/10'}`}
                   >
-                    <div className={`w-5 h-5 rounded-full absolute shadow-[0_0_10px_rgba(0,0,0,0.8)] transition-transform duration-500 ease-spring ${includeVoice ? 'bg-[#00e5ff] translate-x-8' : 'bg-gray-500 translate-x-1'}`} />
+                    <div className={`w-5 h-5 rounded-full absolute shadow-[0_0_10px_rgba(0,0,0,0.8)] transition-transform duration-500 ease-spring ${includeVoice ? 'bg-[#00e5ff] translate-x-[29px]' : 'bg-gray-500 translate-x-[3px]'}`} />
                   </button>
                 </div>
               </div>
